@@ -40,12 +40,7 @@ unsigned char * contents = 0;
 
 
 static unsigned int getPageSize(){
-#if (defined HAVE_SYSCONF)
-    // if present, use sysconf to get kernel page size
-    return sysconf(_SC_PAGESIZE);
-#else
-    return 4096;
-#endif
+    return PAGESIZE;
 }
 
 
